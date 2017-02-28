@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Harvard Jobs</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" type="image/png" href=<%= url_to_asset("HarvardLogo.svg.png") %>>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header>
+  		<div id="header-inner">
+  			    <a>
+              <img src=<%= url_to_asset("HarvardLogo.svg.png") %> id="logo" >
+            </a>
+  			<p id="logo-label">HarvardJobs</p>
+  		</div>
+  	</header>
+
+  	<section class="inner-wrapper" id="content">
+    <!--<%= cookies[:company_email] %>-->
+  		 <%= yield %>
+  	</section>
+   
+  </body>
+    <footer>
+    <section class="inner-wrapper-3">
+        <section class="one-third" id="">
+          <div class = "image">
+            <img src=<%= url_to_asset("harvard.png") %> id="footer-logo">
+            <p id="copy" style="color: white; margin-left: 20px; margin-top: 0; text-align: justify;">&copy HarvardJobs 2017</p>
+          </div>
+
+        </section>
+      <section class="one-third" id="harvard">
+        <ul id="about">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact Us</a></li>
+    
+        </ul>
+      </section>
+
+      <section class="one-third" id="harvard">
+        <ul id="about">
+          <li><a href="#">Careers</a></li>
+          <% if current_user %>
+              <li>Log in as:  <%= current_user.email%></li>
+              <li><%= link_to "Logout", user_path("current"), method: "delete" %></li>
+          <%end%>
+        </ul>
+      </section>
+      <section class="one-third" id="harvard">
+         <ul id="about">
+          <li id="join"><a href="#">Join the Conversation</a></li>
+        </ul>
+        <ul class="social">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </section>
+    </section>
+    </footer>
+
+</html>
+

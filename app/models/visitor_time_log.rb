@@ -1,0 +1,2 @@
+class VisitorTimeLog < ApplicationRecord
+end
